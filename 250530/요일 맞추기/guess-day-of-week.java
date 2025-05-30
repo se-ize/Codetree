@@ -12,13 +12,13 @@ public class Main {
         int one = 0;
         int two = 0;
 
-        for (int i = 0; i < m1; i++) {
+        for (int i = 0; i < m1 - 1; i++) { // -1 유의!! - 전 월까지만 더해야함
             one += date[i];
         }
         one += d1;
 
-        for (int i = 0; i < m2; i++) {
-            two += date[i];
+        for (int j = 0; j < m2 - 1; j++) {
+            two += date[j];
         }
         two += d2;
         // 총 date 각각 구하기
