@@ -26,13 +26,14 @@ public class Main {
         two += d2;
 
         int index = 0;
-        int answer = (two - one) % 7;
+        int diff = (two - one) % 7;
+        int answer = (two - one) / 7;
 
         for (int i = 0; i < days.length; i++) {
             if (days[i].equals(A)) index = i;
         }
 
-        if (index <= answer) answer++; // 같은 경우 고려해야함
+        if (index <= diff) answer++;
 
         System.out.print(answer);
 
