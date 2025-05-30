@@ -7,19 +7,14 @@ public class Main {
         int C = sc.nextInt();
         // Please write your code here.
         int answer = 0;
-        int standard = 11 * 60 + 11;
-        int input = B * 60 + C;
+        int standard = (11 * 24 * 60) + (11 * 60) + 11;
+        int total = (A * 24 * 60) + (B * 60) + C;
 
-        answer += (A - 11) * 24 * 60; // Days
-
-        if (input > standard) {
-            answer += input - standard;
+        if (total < standard) {
+            answer = -1;
         } else {
-            answer += standard - input;
+            answer = total - standard;
         }
-
-        if (A < 11 || (A == 11 && B < 11) && (A == 11 && B == 11 && C < 11)) answer = -1;
-
         System.out.print(answer);
  
     }
