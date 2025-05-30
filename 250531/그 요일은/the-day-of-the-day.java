@@ -32,7 +32,7 @@ public class Main {
             if (days[i].equals(A)) index = i;
         }
 
-        if (index < answer) answer++;
+        if (index <= answer) answer++; // 같은 경우 고려해야함
 
         System.out.print(answer);
 
