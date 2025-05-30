@@ -32,6 +32,11 @@ public class Main {
 
         sub += d1;
 
+        if (m1 == m2 && d1 == d2) {
+            all = 1;
+            sub = 0;
+        }
+
         System.out.print(all-sub);
         
     }
