@@ -26,8 +26,8 @@ public class Main {
         two += d2;
 
         int index = 0;
-        int diff = (two - one) % 7;
-        int answer = (two - one) / 7;
+        int diff = (two - one + 1) % 7; //m2, d2이 항상 앞선다는 조건없으면 two - one + 1 해줘야함
+        int answer = (two - one + 1) / 7;
 
         for (int i = 0; i < days.length; i++) {
             if (days[i].equals(A)) index = i;
