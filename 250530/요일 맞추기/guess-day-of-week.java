@@ -28,9 +28,11 @@ public class Main {
         if (one < two) {
             divide = (two - one) % 7;
             answer = days[divide];
-        } else {
+        } else if (one > two) {
             divide = (one - two) % 7;
             answer = days[7-divide];
+        } else { //주의!! 같은 날짜 경우 존재
+            answer = days[0];
         }
         System.out.print(answer);
     }
