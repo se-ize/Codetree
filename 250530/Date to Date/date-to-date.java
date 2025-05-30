@@ -10,7 +10,7 @@ public class Main {
         int all = 0;
         int sub = 0;
 
-        while (m2 >= 0) {
+        while (m2 > 0) {
             if (m2 == 2) {
                 all += 28;
             } else {
@@ -21,7 +21,7 @@ public class Main {
 
         all += d2;
 
-        while (m1 >= 0) {
+        while (m1 > 0) {
             if (m1 == 2) {
                 sub += 28;
             } else {
