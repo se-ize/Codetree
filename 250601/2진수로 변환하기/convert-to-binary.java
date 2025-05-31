@@ -9,7 +9,8 @@ public class Main {
 
         while (true) {
             if (n < 2) {
-                digits[cnt++] = n;
+                digits[cnt] = n;
+                cnt++;
                 break;
             }
             digits[cnt++] = n % 2;
