@@ -13,7 +13,7 @@ public class Main {
         decimal17 = decimal * 17;
 
         int cnt = 0;
-        int[] digits = new int[10];
+        int[] digits = new int[100];
 
         while (true) {
             if (decimal17 < 2) {
