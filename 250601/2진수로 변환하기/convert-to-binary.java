@@ -8,8 +8,13 @@ public class Main {
         int cnt = 0;
 
         while (true) {
+            if (n == 0) {
+                System.out.print(0);
+                break;
+            }
+
             if (n < 2) {
-                digits[cnt] = n;
+                digits[cnt++] = n;
                 cnt++;
                 break;
             }
