@@ -15,7 +15,6 @@ public class Main {
 
             if (n < 2) {
                 digits[cnt++] = n;
-                cnt++;
                 break;
             }
             digits[cnt++] = n % 2;
