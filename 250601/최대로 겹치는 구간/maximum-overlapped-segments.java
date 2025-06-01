@@ -12,9 +12,8 @@ public class Main {
             // x2[i] = sc.nextInt();
             int x1 = sc.nextInt();
             int x2 = sc.nextInt();
-            int x = 0;
-            for (int j = x1+100; j <= x2-1+100; j++) {
-                lines[x++]++;
+            for (int j = x1+offset; j <= x2-1+offset; j++) {
+                lines[j]++;
             }
         }
 
