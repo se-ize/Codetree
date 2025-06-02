@@ -24,7 +24,7 @@ public class Main {
             }
         }
         
-        for (int i = 0; i < 2 * MAX_K; i++) {
+        for (int i = 0; i < 2 * MAX_K + 1; i++) {
             if (lines[i] == 'W') white++;
             else if (lines[i] == 'B') black++;
         }
