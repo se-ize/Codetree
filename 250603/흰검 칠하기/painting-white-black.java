@@ -3,10 +3,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        char[] lines = new char[40000];
-        int[] whites = new int[40000];
-        int[] blacks = new int[40000];
-        int idx = 20000;
+        char[] lines = new char[100000];
+        int[] whites = new int[100000];
+        int[] blacks = new int[100000];
+        int idx = 100000/2;
         int white = 0, black = 0, gray = 0;
         
         for (int i = 0; i < N; i++) {
@@ -35,7 +35,7 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < 40000; i++) {
+        for (int i = 0; i < 100000; i++) {
             if (lines[i] == 'W') white++;
             else if (lines[i] == 'B') black++;
             else if (lines[i] == 'G') gray++;
