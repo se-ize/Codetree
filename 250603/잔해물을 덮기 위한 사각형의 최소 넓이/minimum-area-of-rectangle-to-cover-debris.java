@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,10 +36,10 @@ public class Main {
             for (int j = 0; j < 2000; j++) {
                 if (area[i][j] == 1) {
                     hasRemains = true;
-                    if (i < x1) x1 = i;
-                    if (i > x2) x2 = i;
-                    if (j < y1) y1 = j;
-                    if (j > y2) y2 = j;
+                    x1 = Math.min(x1, i);
+                    x2 = Math.max(x2, i);
+                    y1 = Math.min(y1, j);
+                    y2 = Math.max(y2, j);
                 }
             }
         }
