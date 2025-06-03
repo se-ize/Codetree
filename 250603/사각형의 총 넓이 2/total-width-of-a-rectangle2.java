@@ -15,8 +15,8 @@ public class Main {
             y1[i] = sc.nextInt();
             x2[i] = sc.nextInt();
             y2[i] = sc.nextInt();
-            for (int k = x1[i]; k < x2[i]; k++) {
-                for (int j = y1[i]; j < y2[i]; j++) {
+            for (int k = x1[i]+offset; k < x2[i]+offset; k++) {
+                for (int j = y1[i]+offset; j < y2[i]+offset; j++) {
                     area[k][j] = true;
                 }
             }
@@ -29,4 +29,4 @@ public class Main {
         }
         System.out.print(answer);
     }
-}
+} 
