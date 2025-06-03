@@ -31,17 +31,20 @@ public class Main {
 
         int x1 = 2000, y1 = 2000; //최소 행,열
         int x2 = 0, y2 = 0; //최대 행,열
+        boolean hasRemains = false;
         for (int i = 0; i < 2000; i++) {
             for (int j = 0; j < 2000; j++) {
                 if (area[i][j] == 1) {
+                    hasRemains = true;
                     if (i < x1) x1 = i;
-                    else if (i > x2) x2 = i;
-
+                    if (i > x2) x2 = i;
                     if (j < y1) y1 = j;
-                    else if (j > y2) y2 = j;
+                    if (j > y2) y2 = j;
                 }
             }
         }
-        System.out.print(((x2+1)-x1)*((y2+1)-y1));
+        if (hasRemains) {
+            System.out.print(((x2+1)-x1)*((y2+1)-y1));
+        } else System.out.print(0);
     }
 }
