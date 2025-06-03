@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int ax1 = sc.nextInt();
+        int ay1 = sc.nextInt();
+        int ax2 = sc.nextInt();
+        int ay2 = sc.nextInt();
+        int bx1 = sc.nextInt();
+        int by1 = sc.nextInt();
+        int bx2 = sc.nextInt();
+        int by2 = sc.nextInt();
+        int mx1 = sc.nextInt();
+        int my1 = sc.nextInt();
+        int mx2 = sc.nextInt();
+        int my2 = sc.nextInt();
+        // Please write your code here.
+        int offset = 1000;
+        int answer = 0;
+        boolean[][] area = new boolean[2000][2000];
+        for (int i = ax1+offset; i < ax2+offset; i++) {
+            for (int j = ay1+offset; j < ay2+offset; j++) {
+                area[i][j] = true;
+            }
+        }
+
+        for (int i = bx1+offset; i < bx2+offset; i++) {
+            for (int j = by1+offset; j < by2+offset; j++) {
+                area[i][j] = true;
+            }
+        }
+
+        for (int i = mx1+offset; i < mx2+offset; i++) {
+            for (int j = my1+offset; j < my2+offset; j++) {
+                area[i][j] = false;
+            }
+        }
+
+        for (int i = 0; i < 2000; i++) {
+            for (int j = 0; j < 2000; j++) {
+                if (area[i][j] == true) answer++;
+            }
+        }
+        System.out.print(answer);
+    }
+}
