@@ -5,21 +5,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];
-        int[] repeats = new int[2000];
-
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-            if (i > 0 && arr[i] == arr[i-1]) repeats[arr[i]]++;
         }
 
-        int max = 0;
-        int answer = 1;
-        for (int repeat : repeats) {
-            if (repeat > max) max = repeat;
+        int max = 1;
+        int count = 1;
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i] == arr[i-1]) {
+                count++;
+                if (count > max) max = count;
+            } else {
+                count = 1;
+            }
         }
 
-        answer = max + 1;
-        System.out.print(answer);
+        System.out.print(max);
         // Please write your code here.
     }
 }
