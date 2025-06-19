@@ -14,7 +14,7 @@ public class Main {
 
         for (int i = 1; i < n; i++) {
             if (arr[i] > t && arr[i-1] > t) {
-                if (arr[i] > arr[i-1]) {
+                if (arr[i] != arr[i-1]) {
                     count++;
                     if (count > max) max = count;
                 } else {
@@ -24,6 +24,6 @@ public class Main {
                 count = 1;
             }
         }
-        System.out.print(max);
+        System.out.println(max);
     }
 }
