@@ -13,7 +13,7 @@ public class Main {
         }
 
         int max = 0;
-        int answer = 0;
+        int answer = 1;
         for (int repeat : repeats) {
             if (repeat > max) answer = repeat + 1;
         }
