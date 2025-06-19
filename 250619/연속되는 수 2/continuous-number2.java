@@ -15,9 +15,10 @@ public class Main {
         int max = 0;
         int answer = 1;
         for (int repeat : repeats) {
-            if (repeat > max) answer = repeat + 1;
+            if (repeat > max) max = repeat;
         }
 
+        answer = max + 1;
         System.out.print(answer);
         // Please write your code here.
     }
