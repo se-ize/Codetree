@@ -52,8 +52,8 @@ public class Main {
 
              // 이전 선두가 A나 B일 때만 선두 변경 체크
              if (prev != 'T' && current != prev) answer++;
-             // 선두 갱신
-             prev = current;
+             // 선두 갱신 - 동점이 아닌 경우에만
+             if (current != 'T') prev = current;
         }
         System.out.print(answer);
     }
