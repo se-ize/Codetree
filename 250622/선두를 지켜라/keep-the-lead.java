@@ -22,6 +22,7 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < A[i][1]; j++) {
+                if (idx + 1 >= raceA.length) break;
                 raceA[idx + 1] = raceA[idx] + A[i][0]; //누적 거리 저장
                 idx++;
             }
@@ -30,6 +31,7 @@ public class Main {
         idx = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < B[i][1]; j++) {
+                if (idx + 1 >= raceB.length) break;
                 raceB[idx + 1] = raceB[idx] + B[i][0];
                 idx++;
             }
