@@ -16,8 +16,8 @@ public class Main {
             B[i][1] = sc.nextInt();
         }
         // Please write your code here.
-        int[] raceA = new int[1001];
-        int[] raceB = new int[1001]; 
+        int[] raceA = new int[10001];
+        int[] raceB = new int[10001]; 
         int idx = 0;
 
         for (int i = 0; i < n; i++) {
