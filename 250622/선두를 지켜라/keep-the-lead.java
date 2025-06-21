@@ -37,23 +37,31 @@ public class Main {
             }
         }
         
-        char prev = 'T'; // 이전 선두
-        char current = 'T';
+        char prev = '?'; // 초기값
         int answer = 0;
         
         for (int i = 1; i < 1001; i++) {
             if (raceA[i] == 0 && raceB[i] == 0) break; // 둘 다 경주 끝났으면 종료
 
+            char current;
             if (raceA[i] > raceB[i]) current = 'A';
             else if (raceA[i] < raceB[i]) current = 'B';
             else current = 'T'; // 동점인 경우
 
-            if (current == 'T') continue;
-
-             // 이전 선두가 A나 B일 때만 선두 변경 체크
-             if (prev != 'T' && current != prev) answer++;
-             // 선두 갱신 - 동점이 아닌 경우에만
-             if (current != 'T') prev = current;
+            // 선두 변경 체크
+            if (prev == '?') {
+                // 첫 번째 시점에서는 선두를 설정만 함
+                if (current != 'T') {
+                    prev = current;
+                }
+            } else {
+                // 이전에 선두가 있었던 경우
+                if (current != 'T' && current != prev) {
+                    answer++;
+                    prev = current;
+                }
+                // 동점이면 이전 선두는 유지
+            }
         }
         System.out.print(answer);
     }
