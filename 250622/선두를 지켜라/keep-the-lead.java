@@ -51,7 +51,7 @@ public class Main {
             if (current == 'T') continue;
 
              // 이전 선두가 A나 B일 때만 선두 변경 체크
-             if ((prev == 'A' || prev == 'B') && current != prev) answer++;
+             if (prev != 'T' && current != prev) answer++;
              // 선두 갱신
              prev = current;
         }
