@@ -18,6 +18,7 @@ public class Main {
             student[person]++;
           if (student[person] >= k) {
                 answer = person;
+                break;
             }
         }
         System.out.print(answer == 0 ? -1 : answer);
