@@ -50,11 +50,10 @@ public class Main {
 
             if (current == 'T') continue;
 
-            // 선두가 바뀐 경우에만 체크
-            if (current != prev) {
-                if (prev != 'T') answer++;
-                prev = current;
-            }
+             // 이전 선두가 A나 B일 때만 선두 변경 체크
+             if ((prev == 'A' || prev == 'B') && current != prev) answer++;
+             // 선두 갱신
+             prev = current;
         }
         System.out.print(answer);
     }
