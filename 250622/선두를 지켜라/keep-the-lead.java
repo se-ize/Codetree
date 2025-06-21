@@ -35,23 +35,23 @@ public class Main {
             }
         }
         
-        char[] winners = new char[1001];
-        char prev = 'T'; //초기값
+        char prev = 'T'; // 이전 선두
+        char current = 'T';
         int answer = 0;
         
         for (int i = 1; i < 1001; i++) {
             if (raceA[i] == 0 && raceB[i] == 0) break; // 둘 다 경주 끝났으면 종료
 
-            if (raceA[i] > raceB[i]) winners[i] = 'A';
-            else if (raceA[i] < raceB[i]) winners[i] = 'B';
-            else winners[i] = 'T';
+            if (raceA[i] > raceB[i]) current = 'A';
+            else if (raceA[i] < raceB[i]) current = 'B';
+            else current = 'T'; // 동점인 경우
 
-            if (winners[i] == 'T') continue; // 동점이면 prev 유지 (선두 유지 중)
-    
+            if (current == 'T') continue;
+
             // 선두가 바뀐 경우에만 체크
-            if (winners[i] != prev) {
-                answer++;
-                prev = winners[i];
+            if (current != prev) {
+                if (prev != 'T') answer++;
+                prev = current;
             }
         }
         System.out.print(answer);
