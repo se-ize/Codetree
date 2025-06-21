@@ -20,7 +20,7 @@ public class Main {
                 answer = person;
             }
         }
-        System.out.print(answer);
+        System.out.print(answer == 0 ? -1 : answer);
         // Please write your code here.
     }
 }
