@@ -6,52 +6,50 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int MAX = 1000005;
-        // 시간 단위로 로봇의 위치가 어떻게 변했는지 추적
+
+        // 시간 단위 위치 기록용 배열
         int[] posA = new int[MAX];
         int[] posB = new int[MAX];
 
-        int lenA = 1; // 시작점 포함
-        int nowA = 0;
-        posA[0] = nowA;
-    
+        // 로봇 A의 이동 기록
+        int timeA = 1;
         for (int i = 0; i < n; i++) {
             int t = sc.nextInt();
             char d = sc.next().charAt(0);
-            // Please write your code here.
             int dir = (d == 'L') ? -1 : 1;
+
             for (int j = 0; j < t; j++) {
-                nowA += dir;
-                posA[lenA++] = nowA;
+                posA[timeA] = posA[timeA - 1] + dir;
+                timeA++;
             }
         }
 
-        int lenB = 1; // 시작점 포함
-        int nowB = 0;
-        posB[0] = nowB;
-    
+        // 로봇 B의 이동 기록
+        int timeB = 1;
         for (int i = 0; i < m; i++) {
             int t = sc.nextInt();
             char d = sc.next().charAt(0);
-            // Please write your code here.
             int dir = (d == 'L') ? -1 : 1;
+
             for (int j = 0; j < t; j++) {
-                nowB += dir;
-                posB[lenB++] = nowB;
+                posB[timeB] = posB[timeB - 1] + dir;
+                timeB++;
             }
         }
 
-        // 로봇이 멈춘 후에도 같은 위치에 계속 머무르도록 보정
-        // 한쪽 로봇의 움직임이 끝난 후에도 다른 쪽이 아직 움직일 수 있어서
-        // 짧은 쪽을 가만히 있는 상태로 연장
-        int len = Math.max(lenA, lenB);
-        for (int i = lenA; i < len; i++) posA[i] = posA[lenA - 1];
-        for (int i = lenB; i < len; i++) posB[i] = posB[lenB - 1];
-        
-        // Please write your code here.
+        // 움직임 끝난 뒤에도 마지막 위치 유지하도록 보정
+        int maxTime = Math.max(timeA, timeB);
+        for (int i = timeA; i < maxTime; i++) posA[i] = posA[timeA - 1];
+        for (int i = timeB; i < maxTime; i++) posB[i] = posB[timeB - 1];
+
+        // 바로 전 시간에는 달랐고 현재 시간에 같아진 경우 세기
         int answer = 0;
-        for (int i = 1; i < len; i++) {
-            if (posA[i-1] != posB[i-1] && posA[i] == posB[i]) answer++;
+        for (int i = 1; i < maxTime; i++) {
+            if (posA[i - 1] != posB[i - 1] && posA[i] == posB[i]) {
+                answer++;
+            }
         }
+
         System.out.print(answer);
     }
 }
