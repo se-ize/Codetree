@@ -15,7 +15,7 @@ public class Main {
             B[i][0] = sc.nextInt();
             B[i][1] = sc.nextInt();
         }
-        // Please write your code here.
+        // **배열 크기 유의** 
         int[] raceA = new int[1000000];
         int[] raceB = new int[1000000]; 
         int idx = 0;
