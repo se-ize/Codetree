@@ -16,29 +16,28 @@ public class Main {
 
        // 처음 감염된 개발자 설정
        answer[P-1][0] = 1; 
-       // 악수 설정
+       // 전염 가능 횟수 초기화
        for (int i = 0; i < N; i++) {
         answer[i][1] = K;
        }
 
-       // 시간순으로 정렬
+       // 시간순으로 악수 기록 정렬
        Arrays.sort(shakes, (a, b) -> Integer.compare(a[0], b[0]));
 
-       // 각 감염된 사람들의 악수를 설정해야함 
        for (int i = 0; i < T; i++) {
-        for (int j = 0; j < N; j++) {
-            if (answer[j][0] == 1 && shakes[i][1] == j+1) {
-                    if (answer[j][1] > 0) {
-                        answer[shakes[i][2] - 1][0] = 1;
-                        answer[j][1]--;
-                    }
-                } else if (answer[j][0] == 1 && shakes[i][2] == j+1) {
-                    if (answer[j][1] > 0) {
-                        answer[shakes[i][1] - 1][0] = 1;
-                        answer[j][1]--;
-                    }
-                }
-        }
+        int x = shakes[i][1] - 1;
+        int y = shakes[i][2] - 1;
+        
+        // x가 감염자이고 전염 횟수 남아있으면 y 감염 시도
+        if (answer[x][0] == 1 && answer[x][1] > 0) {
+            if (answer[y][0] == 0) answer[y][0] = 1;
+            answer[x][1]--;
+        } 
+        // y가 감염자이고 전염 횟수 남아있으면 x 감염 시도
+        if (answer[y][0] == 1 && answer[y][1] > 0) {
+            if (answer[x][0] == 0) answer[x][0] = 1;
+            answer[y][1]--;
+        } 
        }
 
        for (int i = 0; i < N; i++) {
