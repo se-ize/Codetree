@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int MAX = 1000000;
+        int MAX = 1000005;
         // 시간 단위로 로봇의 위치가 어떻게 변했는지 추적
         int[] posA = new int[MAX];
         int[] posB = new int[MAX];
