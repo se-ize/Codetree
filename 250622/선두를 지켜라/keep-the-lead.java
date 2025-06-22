@@ -16,8 +16,8 @@ public class Main {
             B[i][1] = sc.nextInt();
         }
         // Please write your code here.
-        int[] raceA = new int[1000001];
-        int[] raceB = new int[1000001];
+        int[] raceA = new int[1000000];
+        int[] raceB = new int[1000000]; 
         int idx = 0;
 
         for (int i = 0; i < n; i++) {
@@ -40,7 +40,7 @@ public class Main {
         char prev = '?'; // 초기값
         int answer = 0;
         
-        for (int i = 1; i < 100001; i++) {
+        for (int i = 1; i < 1000001; i++) {
             if (raceA[i] == 0 && raceB[i] == 0) break; // 둘 다 경주 끝났으면 종료
 
             char current;
