@@ -12,7 +12,7 @@ public class Main {
         boolean isReturned = false;
 
         for (int i = 0; i < commands.length(); i++) {
-            char c = commands.charAt(0);
+            char c = commands.charAt(i);
             if (c == 'L') {
                 dir = (dir + 3) % 4;
                 time++;
@@ -24,7 +24,6 @@ public class Main {
                 y += dy[dir];
                 time++;
             }
-
             if (x == 0 && y == 0) {
                 isReturned = true;
                 break;
