@@ -8,22 +8,24 @@ public class Main {
         int[] dy = {1, 0, -1, 0};
         int x = 0, y = 0;
         int answer = 0;
+        boolean found = false;
 
         for(int i = 0; i < n; i++){
             char dir = sc.next().charAt(0);
             int dist = sc.nextInt();
             
             for (int j = 1; j <= dist; j++) {
-                x += j * dx[direction(dir)];
-                y += j * dy[direction(dir)];
-                System.out.println(x + " " + y);
-                answer += j;
+                x += dx[direction(dir)];
+                y += dy[direction(dir)];
+                answer++;
                 if (x == 0 && y == 0) {
+                    found = true;
                     break;
                 }
             }
+            if (found) break;
         }
-        System.out.print(answer != 0 ? answer : -1);
+        System.out.print(found ? answer : -1);
     }
     public static int direction(char dir) {
         switch (dir) {
