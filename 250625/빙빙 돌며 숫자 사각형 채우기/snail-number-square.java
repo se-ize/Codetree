@@ -12,26 +12,29 @@ public class Main {
         int dirNum = 0;
         answer[x][y] = 1; // 초기값
 
-        for (int i = 2; i <= n * n; i++) {
+        for (int i = 2; i <= n * m; i++) {
             int nx = x + dx[dirNum];
             int ny = y + dy[dirNum];
             // 벽 만나면 시계 방향 회전
-            if (!isRange(nx, ny, n) || answer[nx][ny] != 0) {
+            if (!isRange(nx, ny, n, m) || answer[nx][ny] != 0) {
                 dirNum = (dirNum + 1) % 4;
+                nx = x + dx[dirNum];
+                ny = y + dy[dirNum];
             }
+
             x = nx;
             y = ny;
             answer[x][y] = i;
         }
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 System.out.print(answer[i][j] + " ");
             }
             System.out.println();
         }
     }
-    public static boolean isRange(int x, int y, int n) {
-        return (0 <= x && x < n && 0 <= y && y < n);
+    public static boolean isRange(int x, int y, int n, int m) {
+        return (0 <= x && x < n && 0 <= y && y < m);
     }
 }
