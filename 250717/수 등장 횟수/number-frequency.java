@@ -1,6 +1,7 @@
 import java.util.*;
 public class Main {
     public static HashMap<Integer, Integer> hashMap = new HashMap<>();
+    // key - 수열의 원소, value - 등장 횟수
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -8,7 +9,7 @@ public class Main {
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-            hashMap.put(arr[i], i + 1); //1-based index
+            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
         }
         int[] queries = new int[m];
         for (int i = 0; i < m; i++) {
